@@ -4,21 +4,21 @@
 #include "FuncionarioNaoExisteException.h"
 #include "OrcamentoEstouradoException.h"
 
+using namespace std;
 class SistemaGerenciaFolha{
     public:
-        SistemaGerenciaFolha(){}
-        SistemaGerenciaFolha(double o){orcamentoMaximo = o;}
+        vector<Funcionario*> funcionarios;
+
+        SistemaGerenciaFolha(){funcionarios = {};}
+        SistemaGerenciaFolha(double o):SistemaGerenciaFolha(){orcamentoMaximo = o;}
         virtual ~SistemaGerenciaFolha(){}
 
-        void setFuncionarios(std::vector<Funcionario*> f){funcionarios = f;}
-        std::vector<Funcionario*> getFuncionarios(){return funcionarios;}
         void setOrcamentoMaximo(double o){orcamentoMaximo = o;}
         double getOrcamentoMaximo(){return orcamentoMaximo;}
 
-        double consultaSalarioFuncionario(std::string nome);
+        double consultaSalarioFuncionario(string nome);
         double valorTotalFolha();
 
     private:
-        std::vector<Funcionario*> funcionarios;
         double orcamentoMaximo;
 };

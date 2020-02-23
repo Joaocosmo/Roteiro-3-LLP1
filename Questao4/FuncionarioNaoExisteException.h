@@ -2,7 +2,8 @@
 #include <exception>
 
 class FuncionarioNaoExisteException : public std::exception{
-    const char* what() const throw(){
-    	return "Funcionario nao existe!";
-    }
+    public:
+        const char* what() const throw(){
+            return "Funcionario nao existe!";
+        }
 };
